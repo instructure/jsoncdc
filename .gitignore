@@ -13,3 +13,7 @@
 *.lock
 sql/jsoncdc-*.sql
 results
+
+# FPM
+/fpm/*.deb
+/fpm/src/
