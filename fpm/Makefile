@@ -4,7 +4,7 @@ package_version = 0.1.0
 deb_version = 1
 upstream_url = https://github.com/instructure/jsoncdc
 package_vendor = Instructure
-ubuntu_releases = trusty xenial
+ubuntu_releases = xenial bionic cosmic
 dependencies = libc6 libgcc1
 target_list = jsoncdc
 
