@@ -9,13 +9,11 @@ ENV SRC_PATH /src
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     ca-certificates curl git make gcc gcc-multilib postgresql-server-dev-$PG_MAJOR \
-    python-pip python-setuptools \
+    python-pip python-setuptools python-wheel \
   && rm -rf /var/lib/apt/lists/* \
-  && curl -sf https://static.rust-lang.org/rustup.sh -o rustup.sh \
-  && bash rustup.sh --disable-sudo -y --verbose \
-  && pip install pgxnclient \
-  && cargo install rustfmt \
-  && mkdir -p "$CARGO_HOME"
+  && curl https://sh.rustup.rs -sSf -o rustup.sh \
+  && bash rustup.sh -y --verbose \
+  && pip install pgxnclient
 
 WORKDIR $SRC_PATH
 
